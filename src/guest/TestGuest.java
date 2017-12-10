@@ -14,15 +14,14 @@ import org.junit.runners.Parameterized;
 public class TestGuest {
 	private String nameTest;
 	private String typeTest;
-	private String addressTest;
 	private long phoneNoTest;
 	private float costTest;
 	
 		
-    public TestGuest(String name,String address, String type) {
+    public TestGuest(String name, String type) {
 		 this.nameTest = name;
 		 this.typeTest = type;
-		 this.addressTest = address;
+		 
 		 }
     
     public void TestBooking(long phoneNo,float cost) {
@@ -35,7 +34,7 @@ public class TestGuest {
     private Guest booking;
 	@Before
 	public void setUp() throws Exception {
-		this.guest = new Guest(this.nameTest,this.addressTest, this.typeTest);
+		this.guest = new Guest(this.nameTest, this.typeTest);
 		this.booking = new Guest(this.phoneNoTest,this.costTest);
 	    //question = new BooleanQuestion(1, "company car?"); // first argument is question id
 	    //criteria = new Criteria();
@@ -83,6 +82,6 @@ public class TestGuest {
 	      boolean matches = profile.matches(criteria);  // employer profile matching applicant criteria?
 	      
 	      assertTrue(matches);
-
+	   }
 }
 
